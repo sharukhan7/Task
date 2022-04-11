@@ -7,7 +7,6 @@ import urllib
 
 
 urlpatterns = [
-    path('hello/', views.HelloView.as_view(), name='hello'),
     #email confirmation with register and login , logout 
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
@@ -47,8 +46,10 @@ urlpatterns = [
     path('delete/type/<int:pk>/',views.DeleteExpensetype.as_view()),
     
 
-    #analysis
-    path('analysis/<int:year>/<int:month>/', views.AnalyticsView.monthly, name="monthly"),
+   #analysis
+   #list total expense for month
+    path('list/total/expense/',views.ListTotalExpense),
+    path('list/total/income/',views.ListTotalIncome),
 
 ]
 
