@@ -15,16 +15,15 @@ from .models import Categories,Incomemodel,Expensetype,Expensemodel
 
 #List
 class ListIncome(generics.ListAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Incomemodel.objects.all()
     serializer_class = Serialize_incomemodel
 class ListExpense(generics.ListAPIView):
-    #permission_classes = (IsAuthenticated,)
-    #queryset = Expensemodel.objects.all()
-    queryset = Expensemodel.objects.filter(date__year='2022', date__month='03')
+    permission_classes = (IsAuthenticated,)
+    queryset = Expensemodel.objects.all()
     serializer_class = Serialize_expensemodel
 class ListCategory(generics.ListAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Categories.objects.all()
     serializer_class = Serialize_category
 class ListExpensetype(generics.ListAPIView):
@@ -34,66 +33,65 @@ class ListExpensetype(generics.ListAPIView):
 
 #Create
 class CreateIncome(generics.CreateAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Incomemodel.objects.all()
     serializer_class = Serialize_incomemodel
 class CreateExpense(generics.CreateAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Expensetype.objects.all()
     serializer_class = Serialize_expensemodel
 class CreateCategory(generics.CreateAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Categories.objects.all()
     serializer_class = Serialize_category
 class CreateExpensetype(generics.CreateAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Expensetype.objects.all()
     serializer_class = Serialize_expensetype
 
 #Update
 class UpdateCategory(generics.RetrieveUpdateAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Categories.objects.all()
     serializer_class = Serialize_category
 
 class UpdateExpensetype(generics.RetrieveUpdateAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Expensetype.objects.all()
     serializer_class = Serialize_expensetype
 
 class UpdateIncome(generics.RetrieveUpdateAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Incomemodel.objects.all()
     serializer_class = Serialize_incomemodel
 
 class UpdateExpense(generics.RetrieveUpdateAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Expensemodel.objects.all()
     serializer_class = Serialize_expensemodel
 
 #delete
 class DeleteCategory(generics.RetrieveDestroyAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Categories.objects.all()
     serializer_class = Serialize_category
 
 class DeleteExpensetype(generics.RetrieveDestroyAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Expensetype.objects.all()
     serializer_class = Serialize_expensetype
 
 class DeleteIncome(generics.RetrieveDestroyAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Incomemodel.objects.all()
     serializer_class = Serialize_incomemodel
 
 class DeleteExpense(generics.RetrieveDestroyAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Expensemodel.objects.all()
     serializer_class = Serialize_expensemodel
 
 #analysis
-
 def validate(date_text):
     try:
         d=datetime.datetime.strptime(date_text, '%Y-%m')
