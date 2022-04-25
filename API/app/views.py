@@ -27,7 +27,7 @@ class ListCategory(generics.ListAPIView):
     queryset = Categories.objects.all()
     serializer_class = Serialize_category
 class ListExpensetype(generics.ListAPIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Expensetype.objects.all()
     serializer_class = Serialize_expensetype
 
