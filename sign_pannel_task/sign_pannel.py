@@ -12,7 +12,7 @@ def Html_to_Image(file,width,height,output_path):
 
 
 def replace_id(image,unique_id):
-    with open(r'resource/test1.html', 'r') as file:
+    with open(r'resource/file.html', 'r') as file:
         data = file.read()
         #print(data)
         data = data.replace("src", image)
@@ -33,4 +33,5 @@ path='/home/sharukhan/Ionixx/Django/task/testing/test/media'
 img_src='src ="https://storage.googleapis.com/blockesign_staging/InkPaper__05_10_2022_09_04_57_360749"'
 unq_id='sdjkfhb4brbsnbfjhjskartvc'
 replace_id(img_src,unq_id)
+
 
